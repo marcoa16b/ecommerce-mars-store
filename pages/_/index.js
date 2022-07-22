@@ -3,7 +3,7 @@ import PersistentDrawerLeft from '../../components/admin/Drawer';
 
 const Admin = ({ data }) => {
   return (
-    <div className=''>
+    <div>
       <PersistentDrawerLeft data={data} />
     </div>
   );
@@ -17,6 +17,7 @@ export async function getStaticProps() {
     }
   });
   let data = await res.json();
+ 
   return {
     props: { 
       data

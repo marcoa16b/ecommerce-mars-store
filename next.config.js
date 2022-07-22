@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      "files.cdn.printful.com"
+      "files.cdn.printful.com",
+      "lh3.googleusercontent.com"
     ]
   }
 }

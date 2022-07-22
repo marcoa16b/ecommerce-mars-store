@@ -10,9 +10,11 @@ const authProvider = new GoogleAuthProvider();
 export const ContextProvider = ({ children }) => {
   const [adminMenu, setAdminMenu] = useState(false);
   const [user, setUser] = useState(null);
-  const [cart, setCart] = useState([]);
+  //const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [productsList, setProductsList] = useState([]);
+
+  const cart = [];
 
   const login = () => {
     signInWithPopup(auth, authProvider)
@@ -85,7 +87,7 @@ export const ContextProvider = ({ children }) => {
         logout,
         user,
         cart, 
-        setCart,
+        //setCart,
         wishlist, 
         setWishlist,
         productsList,

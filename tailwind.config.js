@@ -25,6 +25,10 @@ module.exports = {
       'White': '#fff',
       'Black': '#000',
       'Purple': '#9c27b0',
+      'RoseClare': '#f090a3',
+      'background': '#f0f3f7',
+      // test 
+      // f1d8d7
     }
   },
   plugins: [

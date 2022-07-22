@@ -18,6 +18,10 @@ a {
   box-sizing: border-box;
 }
 
+.css-eggecs > :not(style) {
+  width: 100%;
+}
+
 
 @tailwind base;
 @tailwind components;

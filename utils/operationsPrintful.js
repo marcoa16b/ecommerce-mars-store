@@ -18,3 +18,13 @@ export async function getProductById(id) {
   return data;
 }
 
+export async function getPrintfulCategories() {
+  // https://api.printful.com/categories
+  const res = await fetch('/api/printful/catalog/getcategories', { 
+    method: 'GET',
+    headers: {'Content-Type': 'application/json'}
+  });
+  const data = await res.json();
+  return data;
+}
+

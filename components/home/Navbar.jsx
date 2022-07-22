@@ -12,8 +12,8 @@ import CartPopper from '../poppers/CartPopper';
 const Navbar = (props) => {
   const [userPopper, setUserPopper] = useState(false);
   const [cartPopper, setCartPopper] = useState(false);
-  const [openNavbar, setOpenNavbar] = useState(false);
   const [cartLength, setCartLength] = useState(0);
+  const [openNavbar, setOpenNavbar] = useState(false);
   const { user, cart, login, logout } = useStateContext();
   const [isMobile, setIsMobile] = useState(0);
 
@@ -35,7 +35,6 @@ const Navbar = (props) => {
     openNavbar ? setOpenNavbar(false) : setOpenNavbar(true);
   }
 
-  let itemsCart = cart.length;
   useEffect(() => {
     if (window.innerWidth < 1000) {
       setIsMobile(true);
@@ -44,13 +43,13 @@ const Navbar = (props) => {
     }
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [])
+  }, []);
 
   return (
     isMobile 
     ?
     <div className='relative z-50'>
-      <div className='flex items-center h-20 text-DarkColor px-6 justify-between'>
+      <div className='flex items-center h-20 text-DarkColor shadow-md px-6 justify-between'>
         <div 
           className='flex text-4xl cursor-pointer items-center'
           onClick={handleOpenNavbar}
@@ -121,7 +120,9 @@ const Navbar = (props) => {
       {
         cartPopper
         ?
-        <div className='fixed translate-x-0 overflow-y-scroll duration-300 right-0 w-2/3 h-screen bg-White'><CartPopper /></div>
+        <div className='fixed translate-x-0 overflow-y-scroll duration-300 right-0 w-2/3 h-[calc(100vh-80px)] bg-White'>
+          <CartPopper />
+        </div>
         :
         <div className='fixed translate-x-full duration-300 right-0 w-2/3 h-screen bg-White'></div>
       }
@@ -130,7 +131,7 @@ const Navbar = (props) => {
     :
     // ################## Tablets & PCs ##################
     <div className='relative z-50'>
-      <div className='flex px-7 items-center justify-between'>
+      <div className='flex px-7 h-20 items-center justify-between'>
         <h1 className='text-4xl font-bold my-8'>Mars Store</h1>
         <div className='text-xl flex items-center text-center font-bold my-8'>
           <Link href='#'>
